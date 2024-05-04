@@ -41,7 +41,7 @@ abstract class MixinServerWorld extends World {
         // Ashy shoals only exists in the nether, why do this iteration on any other dimension
         if (!getDimensionEntry().matchesKey(DimensionTypes.THE_NETHER)) return;
         if (CinderscapesConfig.INSTANCE.enableAshFall) {
-            BlockPos pos = tickPos.mutableCopy();
+            BlockPos.Mutable pos = tickPos.mutableCopy();
 
             for (; pos.getY() < 127; pos.setY(pos.getY() + 1)) {
                 BlockPos up = pos.up();
